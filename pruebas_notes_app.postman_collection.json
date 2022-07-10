@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "c9a233cf-84c8-407a-b195-e68a79fabfd5",
+		"name": "pruebas_notes_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "obtener_usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://immense-wildwood-39793.herokuapp.com/servicio/api_notes_app/users",
+					"protocol": "https",
+					"host": [
+						"immense-wildwood-39793",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"servicio",
+						"api_notes_app",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear_usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombre\": \"Peter\"\n}"
+				},
+				"url": {
+					"raw": "https://immense-wildwood-39793.herokuapp.com/servicio/api_notes_app/users",
+					"protocol": "https",
+					"host": [
+						"immense-wildwood-39793",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"servicio",
+						"api_notes_app",
+						"users"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar_usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombre\": \"Juan\"\n}"
+				},
+				"url": {
+					"raw": "https://immense-wildwood-39793.herokuapp.com/servicio/api_notes_app/users/60612a84c48ca721524bf826",
+					"protocol": "https",
+					"host": [
+						"immense-wildwood-39793",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"servicio",
+						"api_notes_app",
+						"users",
+						"60612a84c48ca721524bf826"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar_usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://immense-wildwood-39793.herokuapp.com/servicio/api_notes_app/users/60612a84c48ca721524bf826",
+					"protocol": "https",
+					"host": [
+						"immense-wildwood-39793",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"servicio",
+						"api_notes_app",
+						"users",
+						"60612a84c48ca721524bf826"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener_notas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://immense-wildwood-39793.herokuapp.com/servicio/api_notes_app/notes",
+					"protocol": "https",
+					"host": [
+						"immense-wildwood-39793",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"servicio",
+						"api_notes_app",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear_nota",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\": \"segunda nota\",\n\t\"informacion\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n\t\"nombreCreador\": \"Peter\",\n\t\"fecha\": \"2021-02-05\"\n}"
+				},
+				"url": {
+					"raw": "https://immense-wildwood-39793.herokuapp.com/servicio/api_notes_app/notes",
+					"protocol": "https",
+					"host": [
+						"immense-wildwood-39793",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"servicio",
+						"api_notes_app",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar_nota",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"primera nota\",\n    \"informacion\": \"Praesent euismod facilisis ipsum, id molestie tortor rhoncus molestie. Aenean et dui justo.\",\n    \"nombreCreador\": \"Jane\",\n    \"fecha\": \"2020-05-11\"\n}"
+				},
+				"url": {
+					"raw": "https://immense-wildwood-39793.herokuapp.com/servicio/api_notes_app/notes/60612c36c48ca721524bf829",
+					"protocol": "https",
+					"host": [
+						"immense-wildwood-39793",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"servicio",
+						"api_notes_app",
+						"notes",
+						"60612c36c48ca721524bf829"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar_nota",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://immense-wildwood-39793.herokuapp.com/servicio/api_notes_app/notes/60612c36c48ca721524bf829",
+					"protocol": "https",
+					"host": [
+						"immense-wildwood-39793",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"servicio",
+						"api_notes_app",
+						"notes",
+						"60612c36c48ca721524bf829"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
