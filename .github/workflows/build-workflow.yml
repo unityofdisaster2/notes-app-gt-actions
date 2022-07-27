@@ -1,0 +1,36 @@
+name: build workflow
+
+env:
+  NODE_VERSION: '14'
+
+on:
+  push: 
+    branches: [main]
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+
+    services:
+      mongo-integration-test:
+        image: mongo
+        env:
+          MONGO_INITDB_DATABASE: notes_app_db
+        options: >-
+            --health-cmd mongo 
+            --health-interval 10s 
+            --health-timeout 5s 
+            --health-retries 5 
+          ports:
+            - 27017:27017
+      steps:
+        - uses: actions/checkout@v3
+          name: descargar repositorio en maquina virtual y hacer checkout
+        - uses: actions/setup-node@v3
+          with:
+            node-version: '${{ env.NODE_VERSION }}'
+          name: inicializar nodejs
+        - run: npm install
+          name: instalar dependencias
+        - run: npm run integTest
+          name: ejecutar pruebas de integracion
