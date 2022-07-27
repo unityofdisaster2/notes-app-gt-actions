@@ -34,3 +34,10 @@ jobs:
           name: instalar dependencias
         - run: npm run integTest
           name: ejecutar pruebas de integracion
+
+  deployment-job:
+      runs-on: ubuntu-latest
+      needs: [build-job]
+      steps:
+        - run: echo 'desplegando aplicacion'
+          name: deployment step
