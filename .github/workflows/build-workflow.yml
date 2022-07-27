@@ -21,9 +21,9 @@ jobs:
             --health-interval 10s 
             --health-timeout 5s 
             --health-retries 5 
-          ports:
-            - 27017:27017
-      steps:
+        ports:
+          - 27017:27017
+    steps:
         - uses: actions/checkout@v3
           name: descargar repositorio en maquina virtual y hacer checkout
         - uses: actions/setup-node@v3
