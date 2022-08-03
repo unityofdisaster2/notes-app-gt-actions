@@ -34,10 +34,26 @@ jobs:
           name: instalar dependencias
         - run: npm run integTest
           name: ejecutar pruebas de integracion
+          
+        - run: mkdir -p dist
+          name: create artifact folder
+        - run: cp -R -t dist controllers db integration-test models routes .env index.js package.json
+        - uses: actions/upload-artifact@v3
+          with: 
+            name: notes-app-artifact
+            path: dist/
+          name: subir artefacto
 
   deployment-job:
       runs-on: ubuntu-latest
       needs: [build-job]
       steps:
-        - run: echo 'desplegando aplicacion'
-          name: deployment step
+        - uses: actions/download-artifact@v3
+          with:
+            name: notes-app-artifact
+            path: dist/
+          name: descargar artefacto
+
+        - run: ls -R
+          name: mostrar estructura de directorio descargado
+          working-directory: dist/
