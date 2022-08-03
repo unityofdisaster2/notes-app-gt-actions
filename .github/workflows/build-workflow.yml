@@ -34,7 +34,7 @@ jobs:
           name: instalar dependencias
         - run: npm run integTest
           name: ejecutar pruebas de integracion
-          
+
         - run: mkdir -p dist
           name: create artifact folder
         - run: cp -R -t dist controllers db integration-test models routes .env index.js package.json
@@ -57,3 +57,10 @@ jobs:
         - run: ls -R
           name: mostrar estructura de directorio descargado
           working-directory: dist/
+
+        - uses: akhileshns/heroku-deploy@v3.12.12
+          with:
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_app_name: "notes-app-demo-tr" 
+            heroku_email: "rosalesreyesraymundo@gmail.com"
+            appdir: "dist/"
