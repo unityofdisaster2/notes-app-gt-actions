@@ -4,7 +4,8 @@ const getNotes = async(_, res) => {
     // obtener todos los registros de la coleccion notas
     const notas = await Nota.find({});
     res.json({
-        notas
+        notas,
+        descripcion: 'Este cambio debe verse en heroku'
     });
 }
 
